@@ -1,13 +1,13 @@
 /*2. Define a class FLIGHT in C++ with the following specifications:
 Private data members
-• Flightcode of type integer
-• Destination of string type
-• Distance of type float
-• Fuel of type float
+â€¢ Flightcode of type integer
+â€¢ Destination of string type
+â€¢ Distance of type float
+â€¢ Fuel of type float
 
 2 | P a g e
 Private member functions:
-• A function CALCFUEL() to calculate value of Fuel as per the following criteria:
+â€¢ A function CALCFUEL() to calculate value of Fuel as per the following criteria:
 
 Distance Fuel
 <=1000 500
@@ -15,13 +15,14 @@ More than 1000 and <=2000 1100
 More than 2000 2200
 
 Public member functions:
-• A function FEEDINFO() to allow the user to enter values for Flightcode, Destination, Distance
+â€¢ A function FEEDINFO() to allow the user to enter values for Flightcode, Destination, Distance
 and call function CALCFUEL() to calculate the quantity of Fuel.
-• A function SHOWINFO() to allow the user to view the content of all the data members.*/
+â€¢ A function SHOWINFO() to allow the user to view the content of all the data members.*/
 #include<iostream>
 using namespace std;
 class Flight
 {
+	private:
 	int flightcode;
 	char dest[40];
 	float dist;
@@ -36,15 +37,15 @@ void Flight::calcfuel()
 {
 	if(dist<= 1000)
 	{
-		cout<<"\nTHE FUEL SO USED IS 500";
+		fuel=500;
 	}
 	else if(dist>1000 && dist<=2000)
 	{
-		cout<<"\nTHE FUEL USED IS 1100";
+		fuel=1100;
 	}
 	else
 	{
-		cout<<"\nTHE FUEL USID IS 2200";
+		fuel=2200;
 	}
 	
 }
@@ -56,8 +57,6 @@ void Flight::feedinfo()
 	cin>>dest;
 	cout<<"\nEMTER THE DISTANCE: ";
 	cin>>dist;
-	cout<<"\nENTER THE FUEL: ";
-	cin>>fuel;
 	calcfuel();
 }
 void Flight::showinfo()
