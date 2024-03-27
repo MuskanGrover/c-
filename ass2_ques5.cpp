@@ -16,7 +16,6 @@ Less than 50 D
 Public member functions:*/
 #include<iostream>
 using namespace std;
-#include<cstring>
 class Candidate
 {
 	private:
