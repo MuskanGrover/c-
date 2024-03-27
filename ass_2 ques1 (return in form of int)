@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+
+class Worker
+	{
+		private:
+			int wno;
+			char wname[30];
+			int hours;
+			int rate;
+			int wage;
+			//MEMBER FUNCTION 
+			int  calc_wage();
+		public:
+			void enter_worker();
+			void show_worker();
+    };
+int Worker::calc_wage()
+{
+	return rate*hours;
+}
+void Worker::enter_worker()
+	{
+		cout<<"\nENTER THE DETAILS OF WORKER";
+		cout<<"\nNTER THE WORKER NUMBER:";
+		cin>>wno;
+		cout<<"\nENTER THE NAME OF WORKER:";
+		cin>>wname;
+		cout<<"\nENTER THE HOURS WORKED:";
+		cin>>hours;
+		cout<<"\nENTER THE RATE:";
+		cin>>rate;
+		wage=calc_wage();
+		
+		
+	}
+void Worker::show_worker()
+	{
+		cout<<"\nTHE NUMBER OF WORKER IS: "<<wno;
+		cout<<"\nTHE NAME OF THE WORKER IS:"<<wname;
+		cout<<"\nTHE HOURS OF WORKER IS:"<<hours;
+		cout<<"\nTHE RATE OF WORKER IS:"<<rate;
+		cout<<"\nTHE WAGE OF WORKER IS:"<<wage;
+	}
+int main()
+{
+	Worker w1,w2;
+	w1.enter_worker();
+	w1.show_worker();
+	w2.enter_worker();
+	w2.show_worker();
+}
