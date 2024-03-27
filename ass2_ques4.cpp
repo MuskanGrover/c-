@@ -1,12 +1,12 @@
 /*4. Define a class PHOTO in C++ with the following specifications:
 Private data members
-• Pno of integer type
-• Category of string type
+â€¢ Pno of integer type
+â€¢ Category of string type
 
 3 | P a g e
-• Exhibit of string type
+â€¢ Exhibit of string type
 Private member functions:
-• FixExhibit()
+â€¢ FixExhibit()
 A method to assign Exhibition Gallery as per Category as shown in the following table:
 
 Category Exhibit
@@ -15,44 +15,46 @@ Modern Johnsen
 Classic Terenida
 
 Public member functions:
-• Register()
+â€¢ Register()
 A function to allow user to enter values of Pno, Category and call FixExhibit() method to assign the
 value of Exhibit.
-• ViewAll()
+â€¢ ViewAll()
 A function to display all the data members.
 */
 #include<iostream>
+#include<cstring>
 using namespace std;
+
 class Photo
 {
 	private: 
 		int Pno;
-		string Category;
-		string Exhibit;
+		char Category[30];
+		char Exhibit[30];
 		//MEMBER FUNCTION
-		FixExhibit();
+		void FixExhibit();
 	public:
-		 Register();
-		 ViewAll();
+		 void Register();
+		 void ViewAll();
 		
 		
 };
-int Photo::FixExhibit()
+void Photo::FixExhibit()
 {
-	if(Category=="Antique")
+	if (strcmpi(Category,"ANTIQUE")==0)
 	{
-		Exhibit="Zaveri";
+		strcpy(Exhibit,"Zaveri");
 	}
-	else if(Category=="Modern")
+	else if(strcmpi(Category,"Modern")==0)
 	{
-		Exhibit="Johnsen";
+		strcpy(Exhibit,"Johnsen");
 	}
-	else if(Category=="Classic")
+	else if(strcmpi(Category,"Classic")==0)
 	{
-		Exhibit="Terenida";
+		strcpy(Exhibit,"Terenida");
 	}
 }
-int Photo::Register()
+void Photo::Register()
 {
 	cout<<"\nENTER THE VALUE OF PNO: ";
 	cin>>Pno;
@@ -61,7 +63,7 @@ int Photo::Register()
 	FixExhibit();
 	
 }
-int Photo::ViewAll()
+void Photo::ViewAll()
 {
 	cout<<"\nTHE PNO IS: "<<Pno;
 	cout<<"\nTHE CATEGORY IS: "<<Category;
