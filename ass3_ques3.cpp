@@ -16,6 +16,8 @@ Public member functions:
 function getype() to assign respective Foodtype.
 • A function FOODOUT() to display all the data members on screen.
 */
+
+
 #include<iostream>
 #include<cstring>
 using namespace std;
@@ -34,15 +36,15 @@ class Supply
 };
 void Supply:: gettype()
 {
-	if(strcmpi(sticker,"GREEN")==0);
+	if(strcmpi(stick,"GREEN")==0)
 	{
 		strcpy(foodtype,"Vegetarian");
 	}
-	else if(strcmpi(sticker,"YELLOW")==0);
+	else if(strcmpi(stick,"YELLOW")==0)
 	{
 		strcpy(foodtype,"CONTAINS EGG!!!");
 	}
-	else if(strcmpi(sticker,"RED")==0);
+	else if(strcmpi(stick,"RED")==0)
 	{
 		strcpy(foodtype,"NON-VEGETARIAN");
 	}
@@ -54,7 +56,7 @@ void Supply:: gettype()
 }
 void Supply:: foodin()
 {
-	cout<<"THE FOOD DETAILS ARE:";
+	cout<<"\nTHE FOOD DETAILS ARE:";
 	cout<<"\n ENTER THE FOODCODE: ";
 	cin>>code;
 	cout<<"\n ENTER THE FOODNAME: ";
