@@ -1,31 +1,31 @@
 /*
 Define a class SUPPLY in C++ with the following specifications:
 Private data members
-• Code of type integer
-• Foodname of type string
-• Sticker of type string
-• Foodtype of type string
+â€¢ Code of type integer
+â€¢ Foodname of type string
+â€¢ Sticker of type string
+â€¢ Foodtype of type string
 Private member functions:
-• A function gettype() to assign foodtype as per the following table:
+â€¢ A function gettype() to assign foodtype as per the following table:
 Sticker Foodtype
 GREEN Vegetarian
 YELLOW Contains egg
 RED Non-vegetarian
 Public member functions:
-• A function FOODIN() to allow the user to enter values for code, foodname, sticker and call
+â€¢ A function FOODIN() to allow the user to enter values for code, foodname, sticker and call
 function getype() to assign respective Foodtype.
-• A function FOODOUT() to display all the data members on screen.
+â€¢ A function FOODOUT() to display all the data members on screen.
 */
 #include<iostream>
-#include<string>
+#include<cstring>
 using namespace std;
 class Supply
 {
 	private:
 		int code;
-		string foodname;
-		string stick;
-		string foodtype;
+		char foodname[30];
+		char stick[30];
+		char foodtype[30];
 		//MEMBER FUNCTION
 		void gettype();
 	public:
@@ -34,22 +34,21 @@ class Supply
 };
 void Supply:: gettype()
 {
-	if(stick=="green" || stick=="GREEN")
+	if(strcmpi(sticker,"GREEN")==0);
 	{
-		foodtype="vegetarian";
-		cout<<foodtype;
+		strcpy(foodtype,"Vegetarian");
 	}
-	else if(stick=="yellow" || stick=="YELLOW")
+	else if(strcmpi(sticker,"YELLOW")==0);
 	{
-		cout<<"CONTAINS EGG!!!";
+		strcpy(foodtype,"CONTAINS EGG!!!");
 	}
-	else if(stick=="red" || stick=="RED")
+	else if(strcmpi(sticker,"RED")==0);
 	{
-		cout<<"NON VEGETARIAN!!!";
+		strcpy(foodtype,"NON-VEGETARIAN");
 	}
 	else
 	{
-		cout<<"NO STICKER PRESENT";
+		strcpy(foodtype,"NO STICKER");
 	}
 	
 }
@@ -62,8 +61,6 @@ void Supply:: foodin()
 	cin>>foodname;
 	cout<<"\n ENTER THE STICKER: ";
 	cin>>stick;
-	cout<<"\n ENTER THE FOODTYPE: ";
-	cin>>foodtype;
 	
 	gettype();
 	
