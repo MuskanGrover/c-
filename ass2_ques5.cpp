@@ -58,7 +58,7 @@ int  Candidate::getdata()
 	cin>>cname;
 	cout<<"\nENTER THE AGGREGATE MARKS:" ;
 	cin>>agg_marks;
-	setGrade()
+	setGrade();
 	
 }
 int  Candidate::dispresult()
