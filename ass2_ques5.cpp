@@ -1,12 +1,12 @@
 /*5. Define a class CANDIDATE in C++ with the following specifications:
 Private data members
-• Rno(Registration Number) type integer
-• Cname of type string
-• Agg_marks (Aggregate Marks) of type float
-• Grade of type character
+â€¢ Rno(Registration Number) type integer
+â€¢ Cname of type string
+â€¢ Agg_marks (Aggregate Marks) of type float
+â€¢ Grade of type character
 
 Private member functions:
-• setGrade () to find the grade as per the aggregate marks obtained by the student. Equivalent
+â€¢ setGrade () to find the grade as per the aggregate marks obtained by the student. Equivalent
 aggregate marks range and the respective grade as shown below.
 Aggregate Marks Grade
 >=80 A
@@ -21,7 +21,7 @@ class Candidate
 {
 	private:
 	int Rno;
-	string cname;
+	char cname[30];
 	float agg_marks;
 	char grade;
 	
@@ -36,7 +36,7 @@ int Candidate::setGrade()
 {
 	if(agg_marks>=80)
 	{
-		grade='A';
+		grade='A';//assign grade using = operator
 	}
 	else if(agg_marks<80 && agg_marks>=65)
 	{
@@ -59,6 +59,7 @@ int  Candidate::getdata()
 	cin>>cname;
 	cout<<"\nENTER THE AGGREGATE MARKS:" ;
 	cin>>agg_marks;
+	setGrade()
 	
 }
 int  Candidate::dispresult()
