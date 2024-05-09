@@ -1,0 +1,34 @@
+#include <fstream>
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int n,i;
+    char name[30];
+    cout<<"Enter how many names are to be written to file : ";
+    cin>>n;
+    fflush(stdin);
+    
+	// Creation of ofstream class object
+    ofstream fout;
+    //open the file for writing
+	fout.open("names_app_runtime.txt", ios::app); 
+    
+    
+    //put writing process in a loop
+    for(i=1;i<=n;i++)
+    {
+		cout<<"\nEnter name to be written to the file : ";
+		cin.getline(name,30); 
+		fflush(stdin);
+		fout << name << endl ;
+    }
+    
+	// Close the File
+    fout.close();
+    
+    cout<< n <<" names written to file\n";
+    
+    return 0;
+}
