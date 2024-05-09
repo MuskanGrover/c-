@@ -1,0 +1,16 @@
+#include<fstream>
+#include<iostream>
+using namespace std;
+int main()
+{
+	//CREATING AN OBJEXT OF OFSTREAM CLASS
+	ofstream fout;
+	//OPENING THE FILE USING OPEN FUNCTIO OF OSTREAM CLASS
+	fout.open("names_std",ios::app);
+	//WRITIG TO THE FILE BY THE OBJECT OF OFSTREAM CLASS
+	fout<<"MUSKAN\n";
+	//CLOSING THE FILE 
+	fout.close();
+
+	return 0;
+}
