@@ -1,0 +1,19 @@
+#include<fstream>
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+	ofstream fout;
+	
+	fout.open("quotes_file",ios::app);
+	
+	fout<<"When you forgive you win"<<endl;
+	fout<<"We experience what we intend for others"<<endl;
+	fout<<"Be Happy"<<endl;
+	fout<<"Fear is wisdom as a child"<<endl;
+	
+	fout.close();
+	
+	return 0;
+}
