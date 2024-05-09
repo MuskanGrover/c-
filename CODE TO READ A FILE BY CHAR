@@ -1,0 +1,29 @@
+#include<fstream>
+#include<iostream>
+using namespace std;
+int main()
+{
+	ifstream fin;
+	char ch;
+	
+	fin.open("C:/Users/KIIT/Desktop/oops in c++/names_std",ios::in);
+	
+	if(!fin)
+	{
+		cout<<"THE FILE CANNOT BE OPENED FOR READING";
+		return 1;
+	}
+	int count=0;
+	while(fin)
+	{
+		fin.get(ch);
+		if(fin.eof())
+			break;
+		
+		count++;
+		cout<<ch<<endl;
+	}
+	cout<<"THE COUNT IS "<<count;
+	
+	fin.close();
+}
