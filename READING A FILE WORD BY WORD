@@ -1,0 +1,33 @@
+#include<fstream>
+#include<iostream>
+using namespace std;
+int main()
+{
+	ifstream fin;
+	char word[30];
+	
+	fin.open("C:/Users/KIIT/Desktop/oops in c++/quotes_file",ios::in);
+	
+	if(!fin)
+	{
+		cout<<"FILE CANNOT BE OPENED FOR READING";
+		return 1;
+	}
+	int count=0;
+	while(fin)
+	{
+		fin>>word;
+		
+		if(fin.eof())
+		break;
+		
+		count++;
+		
+		cout<<word<<endl;
+	}
+	cout<<"THE COUNT OF WORD IS: "<<count;
+	
+	return 0;
+}
+	
+	
