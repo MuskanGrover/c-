@@ -1,0 +1,16 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+	//CREATING OBJECT OF OFSTREAM CLASS
+	ofstream fout;
+	//OPENING THE FILE FOR WRITING IN APPEND MODE
+	fout.open("names_std",ios::out);//ios::out is by default
+	//WRITING TO THE FILE
+	fout<<"KRITIKA"<<endl;
+	//CLOSING THE FILE
+	fout.close();
+	
+	return 0;
+}
