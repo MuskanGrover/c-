@@ -1,0 +1,43 @@
+//user-defined namespaces - can contain variable declarations, function definitions
+ 
+// namespace n1
+namespace n1 
+{
+	int a = 2;
+	
+	void sqr()
+	{
+		cout << "namespace n1\n";
+		cout << a * a; //4
+		cout << endl; //print newline
+	}
+}
+ 
+// namespace n2
+namespace n2 
+{
+	int a = 5;
+	void sqr()
+	{
+		cout << "namespace n2 \n" << a * a << endl; 
+	}
+}
+
+
+
+int main()
+{
+    //accessing elements of namespace n1 by using their qualified names
+	cout << n1::a << endl;
+ 	n1::sqr();
+    
+	//accessing elements of namespace n2 by using their qualified names
+	cout << n2::a << endl;
+    n2::sqr();
+    
+	//local variable of main()
+    int a = 10;
+    cout << "Local variable a of main() = " << a << endl; //10
+    
+    return 0;
+}
